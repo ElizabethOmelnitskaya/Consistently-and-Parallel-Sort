@@ -1,19 +1,18 @@
 //последовательный алгоритм быстрой сортировки
 public class QuickSortConsistently {
     // функция быстрой сортировки
-    public static void quickSort(int [] A, int start, int end){
+    public static void quickSort(long [] A, int start, int end){
         int half = start + (end - start)/2; // Центральный элемент
-        int basis = A[half];
-        int i = start;
-        int j = end;
-
+        long basis = A[half];
+        int i = start, j = end;
+        if(start > end) { return; }
         // Сортировка относительно центра
         while(i<=j){
             while(A[i] < basis) i++;
             while(A[j] > basis) j--;
             // Процедура разделения
             if(i<=j){
-                int tmp = A[i];
+                long tmp = A[i];
                 A[i] = A[j];
                 A[j] = tmp;
                 i++;

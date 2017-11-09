@@ -1,7 +1,5 @@
-// Последовательный алгоритм сортировки слиянием
-
 public class MergeSortConsistently {
-    public static void mergeSort(int[] A, int left, int right) {
+    public static void mergeSort(long[] A, int left, int right) {
         if (left < right) {
             int half = (left + right) / 2;
             mergeSort(A, left, half); // сортировка первой половины
@@ -10,8 +8,8 @@ public class MergeSortConsistently {
         }
     }
 
-    public static void merge(int[] Arr, int left, int half, int right) {
-        int[] Temp = new int[right - left + 1];
+    public static void merge(long[] Arr, int left, int half, int right) {
+        long[] Temp = new long[right - left + 1];
         int i = left, j = half + 1, k = 0;
         while (i <= half || j <= right) {
             if (i > half) Temp[k++] = Arr[j++];
